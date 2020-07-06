@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="menuNav">
+    <a class="navbar-brand" (click)="openNav()">Menu</a>
+    <a class="navbar-brand">Strona główna</a>
+    <a class="navbar-brand">{{userObject.username}} </a>
+        <div id="mySidenav" class="sidenav">
+            <a class="closebtn" (click)="closeNav()">&times;</a>
+            <a *ngIf="admin"  routerLink="/configuration">Konfiguracja</a>
+            <a *ngIf="admin"  routerLink="/userworkers">Workers</a>
+            <a *ngIf="user"  routerLink="/myInfo">Moje dane</a>
+            <a *ngIf="manager"  routerLink="/myinformation">Moje dane</a>
+            <a *ngIf="manager" routerLink="/manage"> Avilible Workers</a>
+            <a *ngIf="manager" routerLink="/manage"> Stanowiska</a>
+            <a *ngIf="user" routerLink="/manage"> Zespoly</a>
+            <a *ngIf="manager" routerLink="/manage"> Zarzadzanie zepolami</a>
+            <a *ngIf="user" routerLink="/manage"> Moje wypłaty</a>
+            <a *ngIf="manager" routerLink="/manage"> Zarzadznie wypłatami</a>
+            <a *ngIf="manager" routerLink="/manage"> Zaliczki</a>
+            <a *ngIf="user" routerLink="/manage"> Mój pit</a>
+            <a *ngIf="manager" routerLink="/manage"> Wygeneruj pit</a>
+            <a *ngIf="user" routerLink="/manage"> Moje urlopy</a>
+            <a *ngIf="manager" routerLink="/manage"> Urlopy pracowników</a>
+            <a href="#">Chat</a>
+            <a href="#" (click)="logout()">Wyloguj </a>
+        </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">              
+        </ul>
+    </div>
+
+</nav>

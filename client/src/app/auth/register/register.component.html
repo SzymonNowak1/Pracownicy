@@ -1,0 +1,43 @@
+<div id="register"> 
+<h1>Register</h1>
+    <div class="info">
+        <h2>Strona do zarządzania pracownikami</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni rerum cupiditate quas natus harum, distinctio vero in illum blanditiis laboriosam vitae corporis aspernatur quam perferendis non molestiae. Sed, voluptatibus recusandae.</p>>
+            <a routerLink="/moreinformation">More informations</a>
+    </div>
+    <div class="form">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Username is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="" name="terms" value="false">
+                <label> I agree to the <a href="">terms and conditions</a></label><br>
+                    <button [disabled]="loading" class="btn btn-primary">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Register
+            </button>
+            <a routerLink="/login" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+    </div>
+</div>

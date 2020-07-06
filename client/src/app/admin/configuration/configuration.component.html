@@ -1,0 +1,24 @@
+<table class="flatTable">
+    <tr class="titleTr">
+      <td class="titleTd">AVAILABLE WORKERS</td>
+      <td colspan="4"></td>
+      <td class="plusTd button" (click)="open()"></td>
+    </tr>
+    <tr class="headingTr">
+      <td>ID</td>
+      <td>NAME</td>
+      <td>DESCRIPTION</td>
+      <td>VALUE</td>
+      <td></td>
+    </tr>
+    
+    <tr *ngFor="let conf of configurations">
+      <td> {{conf.id}} </td>
+      <td> {{conf.name}} </td>
+      <td> {{conf.description}} </td>
+      <td> {{conf.value}} </td>
+      <td class="controlTd"(click)="settingsOpen()">
+      </td> 
+    </tr>
+  
+  </table>

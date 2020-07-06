@@ -1,0 +1,23 @@
+<table class="flatTable">
+    <tr class="titleTr">
+      <td class="titleTd">My Information</td>
+    </tr>
+    <tr class="headingTr">
+      <td>ID</td>
+      <td>USERNAME</td>
+      <td>EMAIL</td>
+      <td>WORKER</td>
+      <td>ROLE</td>
+    </tr>
+    
+    <tr *ngFor="let info of user">
+      <td> {{info.userId}} </td>
+      <td> {{info.username}} </td>
+      <td> {{info.email}} </td>
+      <td *ngIf="info.workerId"> {{info.firstName}} {{info.lastName}}  </td>
+      <td *ngIf="!info.workerId"> Nie przypisano </td>
+      <td> {{info.roles}} </td>
+    </tr>
+    <a href ="#">Zgłoś Zmiany</a>
+  
+  </table>
